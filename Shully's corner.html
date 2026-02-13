@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shully's Corner - Premium African Dining Experience. Enjoy authentic African dishes in a cozy, luxury environment.">
+    <title>Shully's Corner | African Fine Dining</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #eee;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.95);
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .navbar {
+    background: rgba(18,18,18,0.95);
+    box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #eab543;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #eab543;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Hero */
+#hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(cornerlogo.jpg) center/cover no-repeat;
+    color: #fff;
+}
+
+#hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Sections */
+.section {
+    padding: 4rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container p {
+    font-size: larger;
+}
+
+/* Menu */
+.menu-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.menu-category {
+    flex: 1;
+    min-width: 250px;
+}
+
+.menu-category ul {
+    list-style: none;
+}
+
+.menu-category li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Forms */
+form input, form textarea, form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+}
+
+/* Testimonials */
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    scroll-behavior: smooth;
+}
+
+.testimonial {
+    min-width: 250px;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+body.dark-mode .testimonial {
+    background: #1f1f1f;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    background: #333;
+    color: #fff;
+}
+
+footer .socials img {
+    width: 24px;
+    margin-left: 0.5rem;
+}
+
+.socials a {
+    color: white;
+}
+
+/* Responsive */
+@media (min-width: 768px){
+    #hero {
+        flex-direction: row;
+        text-align: left;
+    }
+    .hero-content {
+        flex: 1;
+    }
+    .hero-image img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideInUp 1s ease-out forwards;
+}
+</style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">Shully's Corner</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button id="darkModeToggle">🌙</button>
+                <a href="https://wa.me/2348162672719" target="_blank" class="whatsapp-btn">WhatsApp</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="slide-in">
+        <div class="hero-content">
+            <h1>Shully's Corner</h1>
+            <p>Experience the Taste of Africa</p>
+            <a href="#reservation" class="btn">Book a Table</a>
+        </div>
+        <div class="hero-image">
+            <img src="cornerlogo.jpg" alt="African Cuisine">
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p><b>Shully's Corner</b> brings the authentic taste of Africa to your table. Our cozy, premium dining experience combines rich flavors, warm hospitality, and modern luxury ambiance.
+                At <b>Shully’s Corner</b>, we believe that food is more than a meal — it is a story, a culture, and a shared experience. Nestled in a warm and welcoming space, Shully’s Corner was created as a celebration of African flavors, refined dining, and heartfelt hospitality.
+
+Our journey began with a simple but powerful vision: to create a place where tradition meets elegance, where familiar African tastes are elevated into a fine dining experience without losing their soul. Every dish served at Shully’s Corner is inspired by rich African culinary heritage, carefully reimagined with a modern touch to satisfy both the heart and the palate.
+            </p>
+            <p>
+                At the heart of Shully’s Corner is a commitment to quality, authenticity, and comfort. We believe great food starts with great ingredients, which is why we source fresh, high-quality produce and spices that reflect the depth and diversity of African cuisine. Our chefs craft each meal with precision, passion, and respect for tradition, ensuring every bite delivers bold flavor and unforgettable taste.
+
+We are not just a restaurant — we are a corner of warmth, where friends gather, families connect, and memories are made. Whether you are joining us for a quiet dinner, a celebration, or a casual meal, we aim to make every visit feel special.
+            </p>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="section">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Starters</h3>
+                    <ul>
+                        <li>Suya Skewers <span>#3,000</span></li>
+                        <li>Plantain Chips <span>#2,000</span></li>
+                        <li>Egusi Soup Bowl <span>#15,000</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h3>Main Course</h3>
+                    <ul>
+                        <li>Jollof Rice & Chicken <span>#5,000</span></li>
+                        <li>Pounded Yam & Egusi <span>#25,000</span></li>
+                        <li>Grilled Fish <span>#4,500</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h3>Desserts</h3>
+                    <ul>
+                        <li>Chin Chin <span>#2,500</span></li>
+                        <li>Coconut Cake <span>#4,500</span></li>
+                        <li>Ice Cream Platter <span>#8,000</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="Native rice .jpg" alt="Dish 1">
+                <img src="Catfish.jpg" alt="Dish 2">
+                <img src="Roastedplantain.jpg" alt="Dish 3">
+                <img src="Rice&Stew.jpg" alt="Dish 4">
+                <img src="Egusi.jpg" alt="Dish 5">
+                <img src="Burger.jpg" alt="Dish 6">
+                <img src="Jollofrice.jpg" alt="Dish 7">
+                <img src="Spagjollof.jpg" alt="Dish 8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation -->
+    <section id="reservation" class="section">
+        <div class="container">
+            <h2>Book a Table</h2>
+            <form id="reservationForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+                <select name="guests" required>
+                    <option value="">Number of Guests</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4+</option>
+                </select>
+                <button type="submit" class="btn">Reserve</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Amazing flavors and cozy ambiance! Highly recommended."</p>
+                    <span>- Adaobi</span>
+                </div>
+                <div class="testimonial">
+                    <p>"The best African cuisine I’ve ever tasted. A must-visit!"</p>
+                    <span>- Chidi</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Amazing customer service! Highly recommended."</p>
+                    <span>- Amaka</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>📍 123 African St, Lagos, Nigeria</p>
+                    <p>📞 +234 8162672719</p>
+                    <p>✉ info@shullyscorner.com</p>
+                    <div id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18..." allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>© 2026 Shully's Corner. All Rights Reserved.</p>
+            <div class="socials">
+                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
+
+                <p><span>Address:</span> 24 Elegant Street, Lagos, Nigeria</p>
+      <p><span>Phone:</span> +234 800 000 0000</p>
+      <p><span>Email:</span> info@shullyscorner.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>

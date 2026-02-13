@@ -1,0 +1,12 @@
+body{font-family:Poppins,sans-serif;scroll-behavior:smooth}
+.custom-nav{background:#580F41}
+.hero{min-height:100vh;background:linear-gradient(135deg,#580F41,#FADADD);padding-top:120px}
+.profile-img{width:260px;border-radius:50%;border:6px solid #fff}
+.section{padding:80px 0}
+.section-title{text-align:center;color:#580F41;margin-bottom:30px}
+.project{transition:.3s}
+.project:hover{transform:translateY(-8px)}
+#contactForm input,#contactForm textarea{width:100%;padding:10px;margin-bottom:15px}
+#contactForm button{background:#580F41;color:#fff;border:none;padding:10px 20px}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:15px;border-radius:50%;font-size:24px}
+footer{text-align:center;background:#580F41;color:#fff;padding:15px}
