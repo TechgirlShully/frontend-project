@@ -216,19 +216,51 @@ footer .socials img {
 }
 
 /* Responsive */
-@media (min-width: 768px){
+/* Styles for mobile screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
     #hero {
-        flex-direction: row;
-        text-align: left;
+        flex-direction: column;
+        text-align: center;
     }
+
     .hero-content {
-        flex: 1;
-    }
-    .hero-image img {
         width: 100%;
+    }
+
+    .hero-image img {
+        width: 80%;
+        margin: 0 auto;
         border-radius: 10px;
     }
 }
+
+/* Desktop styles */
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+#hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
 
 @keyframes slideInUp {
   from {
